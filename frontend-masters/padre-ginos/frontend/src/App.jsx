@@ -1,15 +1,21 @@
-import { createRoot } from "react-dom/client";
-import Order from "./components/Order";
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+
+import PizzaOfTheDay from './components/PizzaOfTheDay';
+import Order from './components/Order';
 
 const App = () => {
-  return (
-    <div>
-      <h1 className="logo">Padre Gino's Pizza</h1>
-      <Order />
-    </div>
-  );
+	return (
+		<StrictMode>
+			<div>
+				<h1 className="logo">Padre Gino's Pizza</h1>
+				<Order />
+				<PizzaOfTheDay />
+			</div>
+		</StrictMode>
+	);
 };
 
-const container = document.getElementById("root");
+const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(<App />);
